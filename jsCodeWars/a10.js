@@ -13,15 +13,15 @@ function removeAllDuplicates(arr, num) {
 function uniqueOnly(array) {
   const copyArray = array.slice(0);
   const newArray = [];
-  copyArray.forEach((element,index) => {
+  copyArray.forEach((element, index) => {
     delete copyArray[index];
     if (!copyArray.includes(element)) {
       newArray.push(element);
-    }else{
+    } else {
       removeAllDuplicates(copyArray, element);
     }
-  })
-  return newArray.sort()
+  });
+  return newArray.sort();
 }
 
 const result = uniqueOnly(initialArray); // Реализовать эту функцию
