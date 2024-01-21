@@ -1,23 +1,20 @@
 // Array - #16 Напишите функцию, которая принимает массив объектов с полями "имя" и "возраст" и возвращает новый массив, состоящий только из уникальных имён.
 
 function unique(array) {
-  // return array.filter((element) => {
-  //   console.log(array)
-  //   console.log(element.name);
-  //   console.log(!array.includes(element.name));
-  //   return !array.includes(element.name);
-  // });
-  array.forEach();
-  array.forEach((element) => {
-    console.log(Object.values(element));
-    console.log(Object.values(element).includes(element.name));
-  });
-  return array.reduce((acc, element) => {});
-  //   if (Object.values(array.includes(element.name))){
-  //     return [...acc, element]
-  //   }
-  //   return acc
-  // },[])
+  const newArr = [];
+  for (let i = 0; i < array.length - 1; i++) {
+    let counter = 0;
+    for (let j = 1; j < array.length; j++) {
+      if (array[i].name === array[j].name || array[i].age === array[j].age) {
+        counter++;
+        break;
+      }
+    }
+    if (counter === 0) {
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
 }
 
 const initialArray = [
